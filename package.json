@@ -1,0 +1,32 @@
+{
+  "name": "25dmpd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webhook": "nodemon ./webhook/server.js",
+    "server": "nodemon ./server/api/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamkrishnagawade/25dmpd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamkrishnagawade/25dmpd/issues"
+  },
+  "homepage": "https://github.com/iamkrishnagawade/25dmpd#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
