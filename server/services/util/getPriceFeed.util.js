@@ -40,22 +40,27 @@ const many = async (companyList) => {
                 tot_buy_qty,
                 tot_sell_qty,
                 PE,
-                DISPID,
                 SC_SUBSEC,
                 SC_FULLNM,
                 symbol,
                 NSEID,
-                company
+                company,
+                HP,
+                LP,
+                OPN
              } = obj.data.data;
 
             return {
-                dispId: companyList[i].dispId,
-                seType: companyList[i].seType.toUpperCase(),
+                disp_id: companyList[i].dispId,
+                se_type: companyList[i].seType.toUpperCase(),
                 price: {
+                    opn: OPN,
+                    hp: HP,
+                    lp: LP,
                     pricecurrent,
                     priceprevclose,
                     pricechange,
-                    pricepercentchange
+                    pricepercentchange,
                 },
                 vol: {
                     vol: VOL
@@ -65,7 +70,6 @@ const many = async (companyList) => {
                     tot_sell_qty
                 },
                 details: {
-                    dispId: DISPID,
                     sc_subsec: SC_SUBSEC,
                     sc_fullnm: SC_FULLNM,
                     symbol,
@@ -75,9 +79,31 @@ const many = async (companyList) => {
                 pe: PE
             }
         })
-    }));
+    })).catch(err => console.log(err));
+}
+
+const arrange = (priceFeed) => {
+    return  priceFeed.map(feed => {
+        return {
+            disp_id: feed.disp_id,
+            se_type: feed.se_type,
+            ...feed.details,
+            ...feed.price,
+            ...feed.vol,
+            ...feed.qty,
+            pe: feed.pe
+        }
+    })
+}
+
+const values = (priceFeed) => {
+    return priceFeed.map(feed => {
+        return Object.values(feed);
+    })
 }
 
 module.exports = {
-    many
+    many,
+    arrange,
+    values
 }

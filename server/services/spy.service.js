@@ -1,12 +1,20 @@
+const _ = require('lodash');
 const config = require('./config');
 const getPriceFeed = require('./util/getPriceFeed.util');
-const companyList = [
-    { dispId: 'RI', seType: 'BSE' }
-]
-// require('dotenv').config({ path: '../../.env' });
-
-// console.log(process.env.DB_HOST);
+const storePriceFeed = require('./db/priceFeed.db'); 
 
 setInterval(async function() {
-    console.log(await getPriceFeed.many(companyList))
+    const priceFeed = await getPriceFeed.many(config.services.spy.companyList);
+
+    if(priceFeed != undefined) {
+        if(priceFeed.length != 0) {
+            const arrPriceFeed = getPriceFeed.arrange(priceFeed);
+            storePriceFeed.createMany(getPriceFeed.values(arrPriceFeed), (err, data) => {
+                if(err) {
+                    console.log('Error', error.message);
+                    return;
+                }
+            });
+        }
+    }
 }, config.services.spy.timeout);
