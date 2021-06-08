@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const axios = require('axios');
 axios.defaults.baseURL = 'https://priceapi.moneycontrol.com';
 
@@ -23,7 +22,7 @@ getByDispId = (seType, dispId) => {
  * [{ dispId: 'RI', seType: 'BSE' }]
  */
 
-const many = async (companyList) => {
+const manyPriceFeed = async (companyList) => {
     if(companyList === undefined) return [];
 
     return await axios.all(
@@ -83,7 +82,7 @@ const many = async (companyList) => {
     })).catch(err => console.log(err));
 }
 
-const arrange = (priceFeed) => {
+const arrangePriceFeed = (priceFeed) => {
     return  priceFeed.map(feed => {
         return {
             disp_id: feed.disp_id,
@@ -97,12 +96,6 @@ const arrange = (priceFeed) => {
     })
 }
 
-const values = (priceFeed) => {
-    return priceFeed.map(feed => {
-        return Object.values(feed);
-    })
-}
-
 const filterPriceFeed = (pastPriceFeed, newPriceFeed) => {
     return newPriceFeed.filter((feed, i) => {
         return _.isEqual(pastPriceFeed[i], feed) === false;
@@ -110,8 +103,7 @@ const filterPriceFeed = (pastPriceFeed, newPriceFeed) => {
 }
 
 module.exports = {
-    many,
-    arrange,
-    values,
+    manyPriceFeed,
+    arrangePriceFeed,
     filterPriceFeed
 }
