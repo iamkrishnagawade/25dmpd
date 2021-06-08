@@ -124,3 +124,34 @@ CREATE TABLE IF NOT EXISTS cap_index(
     `updated_at` DATETIME on UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(id)
 )
+
+
+CREATE TABLE IF NOT EXISTS sm_index(
+	`ind_id` INT NOT NULL,
+	`stkexchg` VARCHAR(25) NOT NULL,
+	`exchange` VARCHAR(25) NOT NULL,
+	`region` VARCHAR(50) NOT NULL,
+	`bridgesymbol` VARCHAR(20) NOT NULL,
+	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME on UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(ind_id)
+)
+
+
+CREATE TABLE IF NOT EXISTS in_prices(
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`ind_id` INT NOT NULL,
+	`open`DECIMAL(10, 2) default 0.0,
+	`high` DECIMAL(10, 2) default 0.0,
+	`low` DECIMAL(10, 2) default 0.0,
+	`lastprice` DECIMAL(10, 2) default 0.0,
+	`prevclose` DECIMAL(10, 2) default 0.0,
+	`change` DECIMAL(10, 2) default 0.0,
+	`percentchange`  DECIMAL(10, 2) default 0.0,
+	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME on UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(id),
+	FOREIGN KEY (ind_id) REFERENCES sm_index(ind_id)
+)
+
+
