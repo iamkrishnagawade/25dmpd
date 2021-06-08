@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webhook": "nodemon ./webhook/server.js",
-    "server": "nodemon ./server/api/server.js"
+    "server": "nodemon ./server/api/server.js",
+    "service-spyIndex": "node ./server/services/spyIndex.service.js -r dotenv/config dotenv_config_path=./.env",
+    "service-spyPriceFeed": "node ./server/services/spyPirceFeed.service.js -r dotenv/config dotenv_config_path=./.env",
+    "services": "concurrently \"npm run service-spyIndex\" \"npm run service-spyPriceFeed\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
   "homepage": "https://github.com/iamkrishnagawade/25dmpd#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
