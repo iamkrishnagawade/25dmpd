@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const config = require('./config');
 const getPriceFeed = require('./util/getPriceFeed.util');
 const storePriceFeed = require('./db/priceFeed.db');
