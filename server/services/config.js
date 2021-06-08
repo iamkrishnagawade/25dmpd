@@ -3,7 +3,7 @@ module.exports = {
         spy: {
             timeout: 2000,
             companyList: [
-                { dispId: 'TCS', seType: 'BSE' }
+                { dispId: 'RI', seType: 'BSE' }
             ] 
         }
     }

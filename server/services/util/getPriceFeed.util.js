@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const axios = require('axios');
 axios.defaults.baseURL = 'https://priceapi.moneycontrol.com';
 
@@ -102,8 +103,15 @@ const values = (priceFeed) => {
     })
 }
 
+const filterPriceFeed = (pastPriceFeed, newPriceFeed) => {
+    return newPriceFeed.filter((feed, i) => {
+        return _.isEqual(pastPriceFeed[i], feed) === false;
+    })
+}
+
 module.exports = {
     many,
     arrange,
-    values
+    values,
+    filterPriceFeed
 }
