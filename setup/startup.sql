@@ -4,6 +4,10 @@ USE db_25dmpd;
 
 DROP TABLE IF EXISTS cap_price_feeds;
 
+/*
+ * Price Feed
+ */
+
 CREATE TABLE IF NOT EXISTS cap_price_feeds(
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`disp_id` VARCHAR(25) NOT NULL,
@@ -96,3 +100,27 @@ CREATE TABLE IF NOT EXISTS cm_pe(
 	FOREIGN KEY (disp_id) REFERENCES sm_companies(disp_id)
 )
 
+
+/*
+ * Index
+ * 
+ */
+
+CREATE TABLE IF NOT EXISTS cap_index(
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`ind_id` INT NOT NULL,
+	`stkexchg` VARCHAR(25) NOT NULL,
+	`exchange` VARCHAR(25) NOT NULL,
+	`region` VARCHAR(50) NOT NULL,
+	`bridgesymbol` VARCHAR(20) NOT NULL,
+	`open`DECIMAL(10, 2) default 0.0,
+	`high` DECIMAL(10, 2) default 0.0,
+	`low` DECIMAL(10, 2) default 0.0,
+	`lastprice` DECIMAL(10, 2) default 0.0,
+	`prevclose` DECIMAL(10, 2) default 0.0,
+	`change` DECIMAL(10, 2) default 0.0,
+	`percentchange`  DECIMAL(10, 2) default 0.0,
+	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME on UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(id)
+)
