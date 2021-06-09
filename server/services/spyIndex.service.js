@@ -11,7 +11,7 @@ setInterval(async function() {
         if(index.length !== 0) {
             const arrIndex = getIndex.arrangeIndex(index);
             
-            if(true) {
+            if(pastIndex.length !== 0) {
                 const filterIndex = commonUtil.filterArray(pastIndex, arrIndex);
 
                 if(filterIndex.length !== 0) {
