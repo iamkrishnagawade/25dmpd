@@ -1,17 +1,19 @@
 .side-nav {
-    width: 90px;
+    width: 95px;
     background-color: #00284F;
     position: fixed;
     height: 100%;
+    top: 0;
 
     .side-nav__items {
         a {
             display: block;
             text-align: center;
-            color: #D9EBFC;
+            color: #7ba4cc;
             font-size: 25px;
             padding-top: 16px;
             padding-bottom: 16px;
+            letter-spacing: 0.5px;
             
             text-decoration: none;
             
@@ -22,7 +24,7 @@
             }
 
             &.active {
-                color: #6FB7FF;
+                color: #fff;
 
                 span {
                     display: block;
