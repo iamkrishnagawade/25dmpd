@@ -11,7 +11,7 @@ setInterval(async function() {
         if(priceFeed.length !== 0) {
             const arrPriceFeed = getPriceFeed.arrangePriceFeed(priceFeed);
             
-            if(pastPriceFeed.length !== 0) {
+            if(true) { // pastPriceFeed.length !== 0
                 const filterPriceFeed = commonUtil.filterArray(pastPriceFeed, arrPriceFeed);
 
                 if(filterPriceFeed.length !== 0) {

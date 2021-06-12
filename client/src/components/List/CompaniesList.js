@@ -16,16 +16,14 @@ const CompaniesList = () => {
     const [ companiesList, setCompaniesList ] = useState([]),
     [ pricesList, setPricesList ] = useState([]),
     { 
-        isLoading: isLoadingCompaniesList, 
-        isError: isErrorCompaniesList,
+        status: statusCompaniesList
     } = useQuery('companies', getCompanies, { onSuccess: setCompaniesList }),
     {
-        isLoadingPrices,
-        isErrorPrices
-    } = useQuery('prices', getPrices, { onSuccess: setPricesList }),
+        status: statusPrices
+    } = useQuery('prices', getPrices, { onSuccess: setPricesList, refetchInterval: 2000 }),
     filterPrice = (disp_id, se_type) => pricesList.filter(price => price.disp_id === disp_id && price.se_type === se_type);
 
-    if(isLoadingCompaniesList) {
+    if(statusCompaniesList === 'loading') {
         return (
             <div className="companies-list">
                 <span className="loading">Fetching Data...</span>
@@ -33,9 +31,7 @@ const CompaniesList = () => {
         );
     }
 
-    console.log(isErrorCompaniesList)
-
-    if(isErrorCompaniesList === true) {
+    if(statusCompaniesList === 'error') {
         return (
             <div className="companies-list">
                 <span className="error">Some error occurred while retrieving Companies..</span>
