@@ -1,8 +1,12 @@
 import { Redirect, Route, Switch } from 'react-router';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { HomePage, Wrapper, LivePage } from './views';
-import { SideNav } from './components'
+import {  LivePage } from './views';
+import { 
+    Wrapper, 
+    SideNav, 
+    Content 
+} from './components'
 
 const Routes = () => {
     const queryClient = new QueryClient();
@@ -11,15 +15,16 @@ const Routes = () => {
         <QueryClientProvider client={ queryClient }>
             <Wrapper>
                 <SideNav />
-                <Switch>
-                    <Redirect from="/" to="/live" />
-                    <Route path="/" exact>
-                        <HomePage />
-                    </Route>
-                    <Routes path="/live">
-                        <LivePage />
-                    </Routes>
-                </Switch>
+                <Content>
+                    <Switch>
+                        <Route path="/" exact>
+                            <Redirect to="/live" />
+                        </Route>
+                        <Route path="/live">
+                            <LivePage />
+                        </Route>
+                    </Switch>
+                </Content>
             </Wrapper>
             <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>

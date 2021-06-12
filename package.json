@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd ./client && npm start",
     "webhook": "nodemon ./webhook/server.js",
     "server": "nodemon ./server/api/server.js",
     "service-spyIndex": "node ./server/services/spyIndex.service.js -r dotenv/config dotenv_config_path=./.env",

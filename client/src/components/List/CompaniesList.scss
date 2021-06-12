@@ -1,0 +1,62 @@
+.companies-list {
+    width: 350px;
+    position: fixed;
+    background-color: yellow;
+    height: 100%;
+    top: 0;
+    background-color: #00284F;
+
+    .loading, 
+    .error {
+        margin-top: 40px;
+        text-align: center;
+        display: block;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+    }
+    
+    .loading {
+        color: #fff;
+    }
+
+    .error {
+        color: #E74C3C;
+    }
+
+    a {
+        display: block;
+        padding: 15px;
+        background-color: #fff;
+        margin: 5px;
+        border-radius: 2px;
+        text-decoration: none;
+        color: inherit;
+
+        .title {
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .companies-list__details {
+            margin-top: 5px;
+            
+            span {
+                font-size: 12px;
+                font-weight: 800;
+                letter-spacing: 0.5px;
+                
+                span {
+                    font-size: 13px;
+
+                    &.success {
+                        color: #2ECC71;
+                    }
+
+                    &.danger {
+                        color: #E74C3C;
+                    }
+                }
+            }
+        }
+    }
+}
