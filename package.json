@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "service-spy-pricefeeds": "node ./services/spyPriceFeeds.service.js"
+    "webhook": "nodemon ./webhook/server.js",
+    "server": "nodemon ./server/api/server.js",
+    "service-spy-pricefeeds": "node ./services/spyPriceFeeds.service.js",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -13,8 +16,13 @@
   "dependencies": {
     "axios": "^0.21.1",
     "chalk": "^4.1.1",
+    "concurrently": "^6.2.0",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
