@@ -3,10 +3,10 @@ const { logging, getPriceFeeds, savePriceFeeds } = require('../util');
 let pastPriceFeeds = [];
 
 // start service
-logging.default('Started [SPY_PRICE_FEEDS_SERVICE]');
+logging.title(`Started [SPY_PRICE_FEEDS_SERVICE] :: Timeout ${serviceConfig.spy.timeout}`);
 
 setInterval(async () => {
-    logging.info('[PRICE FEEDS]');
+    logging.func('[anonymous function]');
     const priceFeeds = await getPriceFeeds(serviceConfig.spy.companies);
     
     if(priceFeeds !== undefined) {

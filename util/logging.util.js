@@ -37,3 +37,9 @@ exports.func = (msg) => {
         log(chalk.gray(datetime), chalk.magenta('[FUNC]'), msg);  
     }  
 }
+
+exports.title = (msg) => {
+    if(appConfig.debug) {
+        log(chalk.gray(datetime), chalk.green('[TITLE]'), msg);  
+    }  
+}
