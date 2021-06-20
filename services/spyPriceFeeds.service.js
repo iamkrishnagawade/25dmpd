@@ -16,7 +16,9 @@ setInterval(async () => {
                 if(err.kind === 'empty_data') {
                     logging.default('Got Empty Data.');
                     return;
-                };
+                } else {
+                    process.exit(0);
+                }
             }
 
             logging.default(`Update past price feed: ${JSON.stringify(data)}`);
