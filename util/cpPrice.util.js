@@ -103,7 +103,7 @@ exports.savePriceFeeds = async (pastFeeds, newFeeds, result) => {
         result({ kind: 'empty_data' }, null);
         return;
     } else {
-        if(pastFeeds.length !== 0) {
+        if(pastFeeds !== 0) {
             logging.info('Found past data.');
             const filterData = common.filterArray(pastFeeds, arrData);
             logging.default(`Filter Data: ${JSON.stringify(filterData)}`);

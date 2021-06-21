@@ -1,0 +1,40 @@
+/** 
+  ICON BAR
+*/
+.icon-bar {
+    width: 95px;
+    background-color: #1B2631;
+    position: fixed;
+    height: 100%;
+    top: 0;
+  
+    a {
+      display: block;
+      text-align: center;
+      color: #7ba4cc;
+      font-size: 25px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+  
+      span {
+        font-size: 15px;
+        font-weight: 600;
+        display: none;
+      }
+  
+      &.active {
+          color: #fff;
+  
+          span {
+              display: block;
+          }
+      }
+  
+      &.disabled {
+          opacity: 0.5;
+          pointer-events: none;
+      }
+    }
+  }

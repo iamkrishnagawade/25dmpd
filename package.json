@@ -2,11 +2,11 @@
   "name": "25dmpd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webhook": "nodemon ./webhook/server.js",
-    "server": "nodemon ./server/api/server.js",
+    "server": "nodemon ./server/server.js",
+    "client": "cd client && npm start",
     "service-spy-pricefeeds": "node ./services/spyPriceFeeds.service.js",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -20,6 +20,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
