@@ -1,7 +1,7 @@
-const cpPriceFeedsModel = require('../models/cpPriceFeeds.model');
+const AppModel = require('../models/app.model');
 
-exports.findCompanyList = (req, res) => {
-    cpPriceFeedsModel.getComapnyList((err, data) => {
+exports.findComapnyList = (req, res) => {
+    AppModel.getComapnyList((err, data) => {
         if(err) {
             res.status(500).send({
                 message: err.message || 'Some error occurred while retrieving companies.'
@@ -9,11 +9,11 @@ exports.findCompanyList = (req, res) => {
         } else {
             res.send(data);
         }
-    })
+    });
 }
 
 exports.findPriceFeedsById = (req, res) => {
-    cpPriceFeedsModel.getPriceFeedById(req.params.disp_id, (err, data) => {
+    AppModel.getPriceFeedById(req.params.disp_id, (err, data) => {
         if(err) {
             res.status(500).send({
                 message: err.message || 'Some error occurred while retrieving price feeds.'

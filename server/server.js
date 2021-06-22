@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
 });
 
 // required routes
-const CpPriceFeedsRoutes = require('./routes/cpPriceFeeds.routes');
+const AppRoutes = require('./routes/app.routes');
 
 // using middleware
-app.use('/api/v1/app', CpPriceFeedsRoutes);
+app.use('/api/v1/app', AppRoutes);
 
 // Start express on the defined port
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
