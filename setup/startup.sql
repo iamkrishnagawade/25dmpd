@@ -51,7 +51,8 @@ CREATE TABLE IF NOT EXISTS com_details(
 CREATE TABLE IF NOT EXISTS com_price_feeds(
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`disp_id` VARCHAR(25) NOT NULL,
-	`se_type` VARCHAR(3) not null,
+	`se_type` VARCHAR(3) NOT NULL,
+	`spying` INT(1) DEFAULT(0),
 	`opn`DECIMAL(10, 2) default 0.0,
 	`hp` DECIMAL(10, 2) default 0.0,
 	`lp` DECIMAL(10, 2) default 0.0,

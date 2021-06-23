@@ -24,7 +24,8 @@ BEGIN
         	`tot_buy_qty` = NEW.tot_buy_qty,
         	`tot_sell_qty` = NEW.tot_sell_qty,
         	`vol` = NEW.vol,
-        	`pe` = NEW.pe
+        	`pe` = NEW.pe,
+			`spying` = 1
         WHERE disp_id = NEW.disp_id
    			AND se_type = NEW.se_type;
     END IF;
