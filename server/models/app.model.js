@@ -10,7 +10,8 @@ App.getComapnyList = result => {
                         cd.company
                     FROM com_details cd
                     INNER JOIN cp_company cc ON
-                        cc.disp_id = cd.disp_id `;
+                        cc.disp_id = cd.disp_id
+                    WHERE cc.is_active = 1`;
 
     sql.query(query, (err, res) => {
         if(err) {
@@ -27,6 +28,7 @@ App.getPriceFeedById = (disp_id, result) => {
     const query = `SELECT
                         disp_id,
                         se_type,
+                        spying,
                         pricecurrent,
                         pricechange,
                         tot_buy_qty,

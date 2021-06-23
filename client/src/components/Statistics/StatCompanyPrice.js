@@ -1,15 +1,17 @@
 import classNames from 'classnames';
 
-const StatCompanyPrice = ({ se_type, pricecurrent, pricechange }) => {
-    if(pricecurrent === 0) return null;
-     
+const StatCompanyPrice = ({ se_type, spying, pricecurrent, pricechange }) => {     
     return (
-        <span>{ se_type } <span className={
+        <span className={ classNames({ 'disabled': spying === 0 }) }>{ se_type } <span className={
             classNames({
-                'success': pricechange > 0,
-                'danger': pricechange < 0
+                'success': pricechange > 0 && spying === 1,
+                'danger': pricechange < 0 && spying === 1
             })
-        }>{pricecurrent.toFixed(2)} ({pricechange.toFixed(2)})</span></span>
+        }>{
+            (spying === 0) ? 0.00 : pricecurrent.toFixed(2)
+        } ({
+            (spying === 0) ? 0.00 : pricechange.toFixed(2)
+        })</span></span>
     )
 }
 

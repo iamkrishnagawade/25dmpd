@@ -11,6 +11,10 @@
       &:hover {
         background-color: #EBF5FB;
       }
+
+      &.active {
+        background-color: #EBF5FB;
+      }
   
       .compnaies-list__header {
         font-weight: 800;
@@ -24,6 +28,10 @@
           font-size: 12px;
           font-weight: 800;
           letter-spacing: 0.5px;
+
+          &.disabled {
+            opacity: 0.5;
+          }
   
           span {
             &.success {

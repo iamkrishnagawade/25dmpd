@@ -13,7 +13,7 @@ BEGIN
     
     IF rowcount = 0 THEN
     	/* insert company id */
-        INSERT INTO cp_company (`disp_id`) VALUES (NEW.disp_id);
+        INSERT INTO cp_company (`disp_id`, `is_active`) VALUES (NEW.disp_id, 1);
        	
        	/* insert company details */
        	INSERT INTO com_details (`disp_id`, `sc_subsec`, `sc_fullnm`, `symbol`, `nse_id`, `company`) 
