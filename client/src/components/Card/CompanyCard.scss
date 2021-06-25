@@ -23,26 +23,6 @@
   
       .compnaies-list__body {
         margin-top: 5px;
-        
-        span {
-          font-size: 12px;
-          font-weight: 800;
-          letter-spacing: 0.5px;
-
-          &.disabled {
-            opacity: 0.5;
-          }
-  
-          span {
-            &.success {
-              color: #27AE60;
-            }
-  
-            &.danger {
-                color: #E74C3C;
-            }
-          }
-        }
       }
     }
   }

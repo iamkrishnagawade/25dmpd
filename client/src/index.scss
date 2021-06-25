@@ -6,3 +6,21 @@ body {
   color: #34495E;
   background-color: #fafafa;
 }
+
+.live-market-details {
+  .header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #F2F3F4;
+    
+    h1 {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+
+      small {
+        font-size: 18px;
+        color: #D7DBDD;
+      }
+    }
+  }
+}

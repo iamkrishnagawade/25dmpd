@@ -3,7 +3,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
 import { IconBar } from './components';
-import { LiveMarketPage } from './views';
+import { LiveMarketPage, LiveCompanyDetailsPage } from './views';
 
 const Routes = () => {
     const queryClient = new QueryClient();
@@ -15,7 +15,13 @@ const Routes = () => {
         },
         {
             path: '/live-market',
-            component: () => <LiveMarketPage />
+            component: LiveMarketPage,
+            routes: [
+                {
+                    path: '/live-market/:id',
+                    component: LiveCompanyDetailsPage
+                }
+            ]
         }
     ];
 

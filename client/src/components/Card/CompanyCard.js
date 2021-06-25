@@ -22,11 +22,11 @@ const CompanyCard = ({ disp_id, company }) => {
             <span className="compnaies-list__header">{ company }</span>
             <div className="compnaies-list__body d-flex justify-content-between">
                 {
-                    prices.map((price, i) => <StatCompanyPrice key={i} se_type={price.se_type} spying={price.spying} pricecurrent={price.pricecurrent} pricechange={price.pricechange} />)
+                    prices.map((price, i) => <StatCompanyPrice key={i} se_type={price?.se_type} spying={price?.spying} pricecurrent={price?.pricecurrent} pricechange={price?.pricechange} />)
                 }
             </div>
             {
-                (filterSeType('BSE')[0].spying !== 0) && <QtyProgressBar qty_buy={filterSeType('BSE')[0].tot_buy_qty} qty_sell={filterSeType('BSE')[0].tot_sell_qty} />
+                (filterSeType('BSE')[0]?.spying !== 0) && <QtyProgressBar qty_buy={filterSeType('BSE')[0]?.tot_buy_qty} qty_sell={filterSeType('BSE')[0]?.tot_sell_qty} />
             }
         </NavLink>
     )

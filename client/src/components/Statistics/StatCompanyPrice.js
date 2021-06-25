@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import './StatCompanyPrice.scss';
 
 const StatCompanyPrice = ({ se_type, spying, pricecurrent, pricechange }) => {     
     return (
