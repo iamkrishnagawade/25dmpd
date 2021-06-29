@@ -1,0 +1,25 @@
+.top-nav {
+    margin-top: 14px;
+    background-color: #1C2833;
+    border-radius: 5px;
+    padding: 15px;
+    overflow: hidden;
+  
+    .items-left,
+    .items-right {
+      a {
+        color: #566573;
+        font-size: 25px;
+        text-align: center;
+        padding: 12px 20px;
+        
+        &.active { color: #F4F6F7 !important; }
+  
+        &:hover { color: #5D6D7E; }  
+      }
+    }
+  
+    .items-left {
+      a { border-right: 1px solid #283747; }
+    }
+  }
