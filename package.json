@@ -11,7 +11,7 @@
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Krishna Gawade",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",

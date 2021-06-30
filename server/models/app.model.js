@@ -29,10 +29,16 @@ App.getPriceFeedById = (disp_id, result) => {
                         disp_id,
                         se_type,
                         spying,
+                        cpf.opn,
+                        cpf.priceprevclose,
                         pricecurrent,
                         pricechange,
+                        cpf.pricepercentchange,
                         tot_buy_qty,
-                        tot_sell_qty 
+                        tot_sell_qty,
+                        cpf.hp,
+                        cpf.lp,
+                        cpf.vol
                     FROM com_price_feeds cpf
                     WHERE disp_id = ?
                     ORDER BY se_type DESC`;
