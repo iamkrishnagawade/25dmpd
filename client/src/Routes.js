@@ -9,8 +9,8 @@ const Routes = () => {
 
     return (
         <QueryClientProvider client={ queryClient }>
+            <TopNav />
             <div className="wrapper">
-                <TopNav />
                 <Switch>
                     <Route path="/" exact>
                         <HomePage />

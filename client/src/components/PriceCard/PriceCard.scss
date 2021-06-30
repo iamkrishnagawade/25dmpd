@@ -1,0 +1,30 @@
+.price-card {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ebedf0;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+
+    &:hover { background-color: #EBF5FB; }
+  
+    .price-card__header {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+  
+    .price-card__price-feeds {
+      margin-top: 10px;
+      span {
+        font-size: 12px;
+        font-weight: 800;
+        span {
+          font-size: 13px;
+          color: #28B463;
+          letter-spacing: 0.5px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }

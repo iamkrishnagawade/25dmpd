@@ -1,6 +1,10 @@
+import { PriceCard } from '../../components';
+
 const HomePage = () => {
     return (
-        <div></div>
+        <div className="home-page">
+            <PriceCard />
+        </div>
     )
 }
 
