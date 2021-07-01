@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 const PriceCard = ({ dispId, header }) => {
     const [ priceList, setPriceList ] = useState([]),
-    { isLoading, isError } = useQuery(`${dispId}_price_list`, () => getPriceFeeds(dispId), { onSuccess: setPriceList }),
+    { isLoading, isError } = useQuery(`${dispId}_price_list`, () => getPriceFeeds(dispId), { onSuccess: setPriceList, refetchInterval: 2000 }),
     filterBySetype = (se_type) => priceList.filter(price => price.se_type === se_type),
     seBSE = filterBySetype('BSE')[0],
     seNSE = filterBySetype('NSE')[0]
