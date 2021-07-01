@@ -38,20 +38,52 @@ This section should list any major frameworks that you built your project using.
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-You need Node JS, MySQL
+You need Node JS, MySQL. you must create new databases.
 
 * npm
   ```sh
   npm install npm@latest -g
   ```
   
-  ### Installation
+### Installation
 
 1. Clone the repo
    ```sh
    git clone git@github.com:iamkrishnagawade/25dmpd.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
-   npm install
+   npm run all-install
+   ```
+3. Enter your API in `db.config.js`
+   ```JS
+   const HOST = 'ENTER YOUR HOST';
+   const USER = 'ENTER YOUR USER';
+   const PASSWORD = 'ENTER YOUR PASSWORD';
+   const DB = 'ENTER YOUR DBNAME';
+   ```
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Steps
+
+1. For run Client and Server
+   ```sh
+   npm start
+   ```
+2. For Service
+   ```sh
+   npm run service-spy-pricefeeds
+   ```
+3. Add your companies in `service.config.js`
+   ```JS
+   companies: [
+            { dispId: 'ICI02', seType: 'BSE' },
+            { dispId: 'ICI02', seType: 'NSE' },
+            { dispId: 'IEI01', seType: 'BSE' },
+            { dispId: 'IEI01', seType: 'NSE' },
+            { dispId: 'IG04', seType: 'BSE' },
+            { dispId: 'IG04', seType: 'NSE' },
+        ]
    ```
