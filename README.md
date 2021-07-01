@@ -21,8 +21,6 @@ The idea behind this project is to track the stock prices UP and DOWN and collec
 * See all prices info on one page.
 
 ### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [React JS](https://reactjs.org)
 * [Node JS](https://nodejs.org/en)
 * [Express](http://expressjs.com)
