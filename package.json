@@ -8,7 +8,8 @@
     "server": "nodemon ./server/server.js",
     "client": "cd client && npm start",
     "service-spy-pricefeeds": "node ./services/spyPriceFeeds.service.js",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "all-install": "npm install && cd client && npm install"
   },
   "keywords": [],
   "author": "Krishna Gawade",
