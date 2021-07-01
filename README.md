@@ -15,6 +15,19 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]](./images/Mobile-View.png)
+The idea behind this project is to track the stock prices UP and DOWN and collect news, make the relation between news and price, and find out why the prices are changing. 
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+### Key features 
+* See all prices info on one page.
+
+### Built With
+
+This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+* [React JS](https://reactjs.org)
+* [Node JS](https://nodejs.org/en)
+* [Express](http://expressjs.com)
+* [Bootstrap](https://react-bootstrap.github.io)
+* [MySQL](https://www.mysql.com)
+
+### First Look
+![Test Image 1](images/Mobile-View.png)
