@@ -31,3 +31,27 @@ This section should list any major frameworks that you built your project using.
 
 ### First Look
 ![Test Image 1](images/Mobile-View.png)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+You need Node JS, MySQL
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+  
+  ### Installation
+
+1. Clone the repo
+   ```sh
+   git clone git@github.com:iamkrishnagawade/25dmpd.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
